@@ -1,0 +1,119 @@
+﻿@model HukukTakipYeniProje.ViewModels.AvukatGetirViewModel
+
+@{
+    ViewBag.Title = "AvukatGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+@using (Html.BeginForm("Guncelle", "Avukat", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Left Side Components -->
+            <div class="form-group">
+                @Html.LabelFor(m => m.AVUKATID)
+                @Html.TextBoxFor(m => m.AVUKATID, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATAD)
+                @Html.TextBoxFor(m => m.AVUKATAD, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATSOYAD)
+                @Html.TextBoxFor(m => m.AVUKATSOYAD, new { @class = "form-control" })
+                <br />
+                <label>Avukat Kullanıcı Adı</label>
+                @Html.TextBoxFor(m => m.AVUKATKULLANICIADI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATCEPTELNO)
+                @Html.TextBoxFor(m => m.AVUKATCEPTELNO, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATISTELNO)
+                @Html.TextBoxFor(m => m.AVUKATISTELNO, new { @class = "form-control" })
+                <br />
+                <label>Şube Adı</label>
+                @Html.DropDownListFor(model => model.SelectedSubeId, Model.Subeler, "Sube Seçiniz", new { @class = "form-control", id = "SelectedSubeId" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATAVANSHESAPNO)
+                @Html.TextBoxFor(m => m.AVUKATAVANSHESAPNO, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Right Side Components -->
+            <div class="form-group">
+                @Html.LabelFor(m => m.AVUKATTIPI)
+                @Html.TextBoxFor(m => m.AVUKATTIPI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATMUSTERIID)
+                @Html.DropDownListFor(model => model.SelectedMusteriId, Model.Musteriler, "Musteri Seçiniz", new { @class = "form-control", id = "SelectedMusteriId" })
+                <br />
+                <label>Şehir</label>
+                @Html.DropDownListFor(model => model.SelectedSehırId, Model.Sehirler, "Sehir Seçiniz", new { @class = "form-control", id = "SelectedSehirId" })
+                <br />
+                <label>İlçe</label>
+                @Html.DropDownListFor(model => model.SelectedIlceId, Model.Ilceler, "Ilce Seçiniz", new { @class = "form-control", id = "SelectedIlceId" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATEMAIL)
+                @Html.TextBoxFor(m => m.AVUKATEMAIL, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATTAMADRES)
+                @Html.TextBoxFor(m => m.AVUKATTAMADRES, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.AVUKATTCKN)
+                @Html.TextBoxFor(m => m.AVUKATTCKN, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="text-right" style="margin-top: 15px;">
+        <button class="btn btn-success btn-custom-size">Avukat Güncelle</button>
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+        // Get a reference to the dropdown element
+        var dropdown = $("#SelectedSubeId");
+
+        // Attach a click event handler to the dropdown
+        dropdown.click(function () {
+            // Get the selected value
+            var selectedValue = $(this).val();
+
+            var dropdown2 = $("#SelectedMusteriId");
+
+            // Attach a click event handler to the dropdown
+            dropdown2.click(function () {
+                // Get the selected value
+                var selectedValue = $(this).val();
+
+                var dropdown3 = $("#SelectedSehirId");
+
+                // Attach a click event handler to the dropdown
+                dropdown3.click(function () {
+                    // Get the selected value
+                    var selectedValue = $(this).val();
+
+                    var dropdown4 = $("#SelectedIlceId");
+
+                    // Attach a click event handler to the dropdown
+                    dropdown4.click(function () {
+                        // Get the selected value
+                        var selectedValue = $(this).val();
+
+
+
+                    //// Do something with the selected value
+                    //alert("a");
+
+                    // You can also send the selected value to the server using AJAX if needed
+
+                });
+            });
+</script>

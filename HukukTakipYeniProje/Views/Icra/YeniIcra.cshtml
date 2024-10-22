@@ -1,0 +1,58 @@
+﻿@model HukukTakipYeniProje.ViewModels.IcraGetirViewModel
+@{
+    ViewBag.Title = "YeniIcra";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+@using (Html.BeginForm("YeniIcra", "Icra", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.ICRAUYAPDOSYANO)
+                @Html.TextBoxFor(m => m.ICRAUYAPDOSYANO, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.ESASYILNO)
+                @Html.TextBoxFor(m => m.ESASYILNO, new { @class = "form-control" })
+                <br />
+                <label>İcra Avukat</label>
+                @Html.DropDownListFor(model => model.SelectedAvukatId, Model.Avukatlar, "Avukat Seçiniz", new { @class = "form-control", id = "SelectedAvukatId" })
+                <br />
+                @Html.LabelFor(m => m.ICRATAKIPTARIHI)
+                @Html.TextBoxFor(m => m.ICRATAKIPTARIHI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.ICRATAKIPTIPI)
+                @Html.TextBoxFor(m => m.ICRATAKIPTIPI, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Müdürlük</label>
+                @Html.DropDownListFor(model => model.SelectedMudurlukId, Model.Mudurlukler, "Mudurluk Seçiniz", new { @class = "form-control", id = "SelectedMudurlukId" })
+                <br />
+                @Html.LabelFor(m => m.ICRAMAHIYETKODU)
+                @Html.TextBoxFor(m => m.ICRAMAHIYETKODU, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.ICRAAVUKATTEVZINO)
+                @Html.TextBoxFor(m => m.ICRAAVUKATTEVZINO, new { @class = "form-control" })
+                <br />
+                <label>İcra Ürün</label>
+                @Html.DropDownListFor(model => model.SelectedUrunId, Model.Urunler, "Urun Seçiniz", new { @class = "form-control", id = "SelectedUrunId" })
+                <br />
+                @Html.LabelFor(m => m.ICRAMIKTAR)
+                @Html.TextBoxFor(m => m.ICRAMIKTAR, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="text-right" style="margin-top: 15px;">
+        <button class="btn btn-success btn-custom-size">İcra Kaydet</button>
+    </div>
+}

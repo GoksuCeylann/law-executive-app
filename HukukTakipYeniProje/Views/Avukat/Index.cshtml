@@ -1,0 +1,42 @@
+﻿@using HukukTakipYeniProje.Models.Entity
+@model List<AVUKATLAR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table id="tbl2" class="table table-bordered">
+    <thead>
+        <tr>
+            @*<th>AVUKAT ID</th>*@
+            <th>AVUKAT ADI</th>
+            <th>TCKN</th>
+            <th>MÜŞTERİ NO</th>
+            <th>İŞ TEL NO</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var av in Model)
+        {
+            <tr>
+                @*<td>@av.AVUKATID</td>*@
+                <td>@av.AVUKATAD @av.AVUKATSOYAD </td>
+                <td>@av.AVUKATTCKN</td>
+                <td>@av.MUSTERILER.MUSTERINO</td>
+                <td>@av.AVUKATISTELNO</td>
+                <td><a href="/AVUKAT/SIL/@av.AVUKATID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/AVUKAT/AvukatGetir/@av.AVUKATID" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Avukat/YeniAvukat/" class="btn btn-primary">YENİ AVUKAT EKLE</a>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $('#tbl2').DataTable();
+</script>

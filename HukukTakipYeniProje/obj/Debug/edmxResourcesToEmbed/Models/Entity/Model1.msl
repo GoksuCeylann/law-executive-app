@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcDbHukukTakipModelStoreContainer" CdmEntityContainer="MvcDbHukukTakipEntities">
+    <EntitySetMapping Name="AVUKATLAR">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.AVUKATLAR">
+        <MappingFragment StoreEntitySet="AVUKATLAR">
+          <ScalarProperty Name="AVUKATID" ColumnName="AVUKATID" />
+          <ScalarProperty Name="AVUKATAD" ColumnName="AVUKATAD" />
+          <ScalarProperty Name="AVUKATSOYAD" ColumnName="AVUKATSOYAD" />
+          <ScalarProperty Name="AVUKATKULLANICIADIID" ColumnName="AVUKATKULLANICIADIID" />
+          <ScalarProperty Name="AVUKATCEPTELNO" ColumnName="AVUKATCEPTELNO" />
+          <ScalarProperty Name="AVUKATISTELNO" ColumnName="AVUKATISTELNO" />
+          <ScalarProperty Name="AVUKATAVANSHESAPSUBEID" ColumnName="AVUKATAVANSHESAPSUBEID" />
+          <ScalarProperty Name="AVUKATAVANSHESAPNO" ColumnName="AVUKATAVANSHESAPNO" />
+          <ScalarProperty Name="AVUKATTIPI" ColumnName="AVUKATTIPI" />
+          <ScalarProperty Name="AVUKATMUSTERIID" ColumnName="AVUKATMUSTERIID" />
+          <ScalarProperty Name="AVUKATSEHIRID" ColumnName="AVUKATSEHIRID" />
+          <ScalarProperty Name="AVUKATILCEID" ColumnName="AVUKATILCEID" />
+          <ScalarProperty Name="AVUKATEMAIL" ColumnName="AVUKATEMAIL" />
+          <ScalarProperty Name="AVUKATTAMADRES" ColumnName="AVUKATTAMADRES" />
+          <ScalarProperty Name="AVUKATTCKN" ColumnName="AVUKATTCKN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BORCLUTURLERI">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.BORCLUTURLERI">
+        <MappingFragment StoreEntitySet="BORCLUTURLERI">
+          <ScalarProperty Name="BORCLUTURUID" ColumnName="BORCLUTURUID" />
+          <ScalarProperty Name="BORCLUTURU" ColumnName="BORCLUTURU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICRALAR">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.ICRALAR">
+        <MappingFragment StoreEntitySet="ICRALAR">
+          <ScalarProperty Name="ICRAID" ColumnName="ICRAID" />
+          <ScalarProperty Name="ICRAUYAPDOSYANO" ColumnName="ICRAUYAPDOSYANO" />
+          <ScalarProperty Name="ESASYILNO" ColumnName="ESASYILNO" />
+          <ScalarProperty Name="ICRAAVUKAT" ColumnName="ICRAAVUKAT" />
+          <ScalarProperty Name="ICRATAKIPTARIHI" ColumnName="ICRATAKIPTARIHI" />
+          <ScalarProperty Name="ICRATAKIPTIPI" ColumnName="ICRATAKIPTIPI" />
+          <ScalarProperty Name="ICRAMUDURLUK" ColumnName="ICRAMUDURLUK" />
+          <ScalarProperty Name="ICRAMAHIYETKODU" ColumnName="ICRAMAHIYETKODU" />
+          <ScalarProperty Name="ICRAAVUKATTEVZINO" ColumnName="ICRAAVUKATTEVZINO" />
+          <ScalarProperty Name="ICRAURUN" ColumnName="ICRAURUN" />
+          <ScalarProperty Name="ICRAMIKTAR" ColumnName="ICRAMIKTAR" />
+          <ScalarProperty Name="ICRAIHTARID" ColumnName="ICRAIHTARID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICRALAR_IHTARLAR">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.ICRALAR_IHTARLAR">
+        <MappingFragment StoreEntitySet="ICRALAR_IHTARLAR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ICRAID" ColumnName="ICRAID" />
+          <ScalarProperty Name="IHTARID" ColumnName="IHTARID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IHTARLAR">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.IHTARLAR">
+        <MappingFragment StoreEntitySet="IHTARLAR">
+          <ScalarProperty Name="IHTARID" ColumnName="IHTARID" />
+          <ScalarProperty Name="IHTARBORCLU" ColumnName="IHTARBORCLU" />
+          <ScalarProperty Name="IHTARNOTERADI" ColumnName="IHTARNOTERADI" />
+          <ScalarProperty Name="IHTARYEVMIYENO" ColumnName="IHTARYEVMIYENO" />
+          <ScalarProperty Name="IHTARTARIHI" ColumnName="IHTARTARIHI" />
+          <ScalarProperty Name="IHTARSURE" ColumnName="IHTARSURE" />
+          <ScalarProperty Name="IHTARTEBLIGTARIHI" ColumnName="IHTARTEBLIGTARIHI" />
+          <ScalarProperty Name="IHTARTEBLIGGIRISTARIHI" ColumnName="IHTARTEBLIGGIRISTARIHI" />
+          <ScalarProperty Name="IHTARNAMENAKITTUTAR" ColumnName="IHTARNAMENAKITTUTAR" />
+          <ScalarProperty Name="IHTARNAMEGAYRINAKITTUTAR" ColumnName="IHTARNAMEGAYRINAKITTUTAR" />
+          <ScalarProperty Name="IHTARNO" ColumnName="IHTARNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ILCELER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.ILCELER">
+        <MappingFragment StoreEntitySet="ILCELER">
+          <ScalarProperty Name="ILCEID" ColumnName="ILCEID" />
+          <ScalarProperty Name="ILCEAD" ColumnName="ILCEAD" />
+          <ScalarProperty Name="ILCESEHIRID" ColumnName="ILCESEHIRID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KULLANICILAR">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.KULLANICILAR">
+        <MappingFragment StoreEntitySet="KULLANICILAR">
+          <ScalarProperty Name="KULLANICIID" ColumnName="KULLANICIID" />
+          <ScalarProperty Name="KULLANICIAD" ColumnName="KULLANICIAD" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+          <ScalarProperty Name="KULLANICIROL" ColumnName="KULLANICIROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KULLANICIROL">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.KULLANICIROL">
+        <MappingFragment StoreEntitySet="KULLANICIROL">
+          <ScalarProperty Name="KULLANICIROLID" ColumnName="KULLANICIROLID" />
+          <ScalarProperty Name="KULLANICIROL1" ColumnName="KULLANICIROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUDURLUKLER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.MUDURLUKLER">
+        <MappingFragment StoreEntitySet="MUDURLUKLER">
+          <ScalarProperty Name="MUDURLUKID" ColumnName="MUDURLUKID" />
+          <ScalarProperty Name="MUDURLUKAD" ColumnName="MUDURLUKAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUSTERILER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.MUSTERILER">
+        <MappingFragment StoreEntitySet="MUSTERILER">
+          <ScalarProperty Name="MUSTERIID" ColumnName="MUSTERIID" />
+          <ScalarProperty Name="MUSTERINO" ColumnName="MUSTERINO" />
+          <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
+          <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
+          <ScalarProperty Name="MUSTERITCKN" ColumnName="MUSTERITCKN" />
+          <ScalarProperty Name="MUSTERIDOGUMTARIHI" ColumnName="MUSTERIDOGUMTARIHI" />
+          <ScalarProperty Name="MUSTERIDOGUMYERI" ColumnName="MUSTERIDOGUMYERI" />
+          <ScalarProperty Name="MUSTERICINSIYET" ColumnName="MUSTERICINSIYET" />
+          <ScalarProperty Name="MUSTERIMEDENIDURUM" ColumnName="MUSTERIMEDENIDURUM" />
+          <ScalarProperty Name="MUSTERIBABABAAD" ColumnName="MUSTERIBABABAAD" />
+          <ScalarProperty Name="MUSTERIANNEAD" ColumnName="MUSTERIANNEAD" />
+          <ScalarProperty Name="MUSTERISEHIRID" ColumnName="MUSTERISEHIRID" />
+          <ScalarProperty Name="MUSTERIILCEID" ColumnName="MUSTERIILCEID" />
+          <ScalarProperty Name="MUSTERISEMT" ColumnName="MUSTERISEMT" />
+          <ScalarProperty Name="MUSTERIBORCLUTIPI" ColumnName="MUSTERIBORCLUTIPI" />
+          <ScalarProperty Name="MUSTERIBORCLUTURUID" ColumnName="MUSTERIBORCLUTURUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTERLIKLER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.NOTERLIKLER">
+        <MappingFragment StoreEntitySet="NOTERLIKLER">
+          <ScalarProperty Name="NOTERID" ColumnName="NOTERID" />
+          <ScalarProperty Name="NOTERAD" ColumnName="NOTERAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEHIRLER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.SEHIRLER">
+        <MappingFragment StoreEntitySet="SEHIRLER">
+          <ScalarProperty Name="SEHIRID" ColumnName="SEHIRID" />
+          <ScalarProperty Name="SEHIRAD" ColumnName="SEHIRAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBELER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.SUBELER">
+        <MappingFragment StoreEntitySet="SUBELER">
+          <ScalarProperty Name="SUBEID" ColumnName="SUBEID" />
+          <ScalarProperty Name="SUBEAD" ColumnName="SUBEAD" />
+          <ScalarProperty Name="SUBEKOD" ColumnName="SUBEKOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="URUNLER">
+      <EntityTypeMapping TypeName="MvcDbHukukTakipModel.URUNLER">
+        <MappingFragment StoreEntitySet="URUNLER">
+          <ScalarProperty Name="URUNID" ColumnName="URUNID" />
+          <ScalarProperty Name="URUNBORCLUID" ColumnName="URUNBORCLUID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="URUNTAKIPMIKTAR" ColumnName="URUNTAKIPMIKTAR" />
+          <ScalarProperty Name="URUNTAKIPTARIHI" ColumnName="URUNTAKIPTARIHI" />
+          <ScalarProperty Name="URUNTAKIPBIRIMKODU" ColumnName="URUNTAKIPBIRIMKODU" />
+          <ScalarProperty Name="URUNTAKIPMUDINO" ColumnName="URUNTAKIPMUDINO" />
+          <ScalarProperty Name="URUNAVUKATID" ColumnName="URUNAVUKATID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

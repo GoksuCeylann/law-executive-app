@@ -1,0 +1,108 @@
+﻿@model HukukTakipYeniProje.ViewModels.IhtarGetirViewModel
+
+@{
+    ViewBag.Title = "IhtarGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+@using (Html.BeginForm("Guncelle", "Ihtar", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Left Side Components -->
+            <div class="form-group">
+                @Html.LabelFor(m => m.IHTARID)
+                @Html.TextBoxFor(m => m.IHTARID, new { @class = "form-control"@*, @readonly = "readonly"*@ })
+                <br />
+                <label>İhtar Borçlu</label>
+                @Html.DropDownListFor(model => model.SelectedBorcluId, Model.Borclular, "Borclu Turu Seçiniz", new { @class = "form-control", id = "SelectedBorcluId" })
+                <br />
+                <label>Noter Adı</label>
+                @Html.DropDownListFor(model => model.SelectedNoterId, Model.Noterlikler, "Noter Seçiniz", new { @class = "form-control", id = "SelectedNoterId" })
+                <br />
+                @Html.LabelFor(m => m.IHTARYEVMIYENO)
+                @Html.TextBoxFor(m => m.IHTARYEVMIYENO, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.IHTARTARIHI)
+                @Html.TextBoxFor(m => m.IHTARTARIHI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.IHTARSURE)
+                @Html.TextBoxFor(m => m.IHTARSURE, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Right Side Components -->
+            <div class="form-group">
+                <label>İhtar Teblig Tarihi</label>
+                @Html.TextBoxFor(m => m.IHTARTEBLIGTARIHI, new { @class = "form-control" })
+                <br />
+                <label>İhtar Teblig Giriş Tarihi</label>
+                @Html.TextBoxFor(m => m.IHTARTEBLIGGIRISTARIHI, new { @class = "form-control" })
+                <br />
+                <label>İhtar Name Nakit Tutar</label>
+                @Html.TextBoxFor(m => m.IHTARNAMENAKITTUTAR, new { @class = "form-control" })
+                <br />
+                <label>İhtar Name Gayri Nakit Tutar</label>
+                @Html.TextBoxFor(m => m.IHTARNAMEGAYRINAKITTUTAR, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.IHTARNO)
+                @Html.TextBoxFor(m => m.IHTARNO, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="text-right" style="margin-top: 15px;">
+        <button class="btn btn-success btn-custom-size">İhtar Güncelle</button>
+    </div>
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        // Get a reference to the dropdown element
+        var dropdown = $("#SelectedBorcluId");
+
+        // Attach a click event handler to the dropdown
+        dropdown.click(function () {
+            // Get the selected value
+            var selectedValue = $(this).val();
+
+            var dropdown2 = $("#SelectedNoterId");
+
+            // Attach a click event handler to the dropdown
+            dropdown2.click(function () {
+                // Get the selected value
+                var selectedValue = $(this).val();
+
+                //var dropdown3 = $("#SelectedBorcluTuruId");
+
+                //// Attach a click event handler to the dropdown
+                //dropdown3.click(function () {
+                //    // Get the selected value
+                //    var selectedValue = $(this).val();
+
+                    //var dropdown4 = $("#SelectedIhtarId");
+
+                    //// Attach a click event handler to the dropdown
+                    //dropdown4.click(function () {
+                    //    // Get the selected value
+                    //    var selectedValue = $(this).val();
+
+
+
+                    //// Do something with the selected value
+                    //alert("a");
+
+                    // You can also send the selected value to the server using AJAX if needed
+
+                });
+            });
+</script>

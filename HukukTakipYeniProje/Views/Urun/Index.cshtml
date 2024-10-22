@@ -1,0 +1,43 @@
+﻿@using HukukTakipYeniProje.Models.Entity
+@model List<URUNLER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table id="tbl3" class="table table-bordered">
+    <thead>
+        <tr>
+            @*<th>ÜRÜN ID</th>*@
+            <th>ÜRÜN BORÇLU</th>
+            <th>ÜRÜN ADI</th>
+            <th>TAKİP MİKTARI</th>
+            <th>AVUKAT</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                @*<td>@urn.URUNID</td>*@
+                <td>@urn.MUSTERILER.MUSTERIAD @urn.MUSTERILER.MUSTERISOYAD</td>
+                <td>@urn.URUNAD</td>
+                <td>@urn.URUNTAKIPMIKTAR</td>
+                <td>@urn.AVUKATLAR.AVUKATAD @urn.AVUKATLAR.AVUKATSOYAD</td>
+                <td><a href="/URUN/SIL/@urn.URUNID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/URUN/UrunGetir/@urn.URUNID" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Urun/YeniUrun/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $('#tbl3').DataTable();
+</script>
+

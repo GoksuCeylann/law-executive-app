@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcDbHukukTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AVUKATLAR">
+    <Key>
+      <PropertyRef Name="AVUKATID" />
+    </Key>
+    <Property Name="AVUKATID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AVUKATAD" Type="varchar" MaxLength="30" />
+    <Property Name="AVUKATSOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="AVUKATKULLANICIADIID" Type="uniqueidentifier" />
+    <Property Name="AVUKATCEPTELNO" Type="varchar" MaxLength="11" />
+    <Property Name="AVUKATISTELNO" Type="varchar" MaxLength="11" />
+    <Property Name="AVUKATAVANSHESAPSUBEID" Type="uniqueidentifier" />
+    <Property Name="AVUKATAVANSHESAPNO" Type="varchar" MaxLength="12" />
+    <Property Name="AVUKATTIPI" Type="varchar" MaxLength="30" />
+    <Property Name="AVUKATMUSTERIID" Type="uniqueidentifier" />
+    <Property Name="AVUKATSEHIRID" Type="uniqueidentifier" />
+    <Property Name="AVUKATILCEID" Type="uniqueidentifier" />
+    <Property Name="AVUKATEMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="AVUKATTAMADRES" Type="varchar" MaxLength="80" />
+    <Property Name="AVUKATTCKN" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="BORCLUTURLERI">
+    <Key>
+      <PropertyRef Name="BORCLUTURUID" />
+    </Key>
+    <Property Name="BORCLUTURUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BORCLUTURU" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ICRALAR">
+    <Key>
+      <PropertyRef Name="ICRAID" />
+    </Key>
+    <Property Name="ICRAID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ICRAUYAPDOSYANO" Type="varchar" MaxLength="10" />
+    <Property Name="ESASYILNO" Type="varchar" MaxLength="8" />
+    <Property Name="ICRAAVUKAT" Type="uniqueidentifier" />
+    <Property Name="ICRATAKIPTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="ICRATAKIPTIPI" Type="varchar" MaxLength="10" />
+    <Property Name="ICRAMUDURLUK" Type="uniqueidentifier" />
+    <Property Name="ICRAMAHIYETKODU" Type="varchar" MaxLength="4" />
+    <Property Name="ICRAAVUKATTEVZINO" Type="varchar" MaxLength="8" />
+    <Property Name="ICRAURUN" Type="uniqueidentifier" />
+    <Property Name="ICRAMIKTAR" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="ICRAIHTARID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="ICRALAR_IHTARLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ICRAID" Type="uniqueidentifier" />
+    <Property Name="IHTARID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="IHTARLAR">
+    <Key>
+      <PropertyRef Name="IHTARID" />
+    </Key>
+    <Property Name="IHTARID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IHTARBORCLU" Type="uniqueidentifier" />
+    <Property Name="IHTARNOTERADI" Type="uniqueidentifier" />
+    <Property Name="IHTARYEVMIYENO" Type="varchar" MaxLength="8" />
+    <Property Name="IHTARTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="IHTARSURE" Type="int" />
+    <Property Name="IHTARTEBLIGTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="IHTARTEBLIGGIRISTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="IHTARNAMENAKITTUTAR" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="IHTARNAMEGAYRINAKITTUTAR" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="IHTARNO" Type="int" />
+  </EntityType>
+  <EntityType Name="ILCELER">
+    <Key>
+      <PropertyRef Name="ILCEID" />
+    </Key>
+    <Property Name="ILCEID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ILCEAD" Type="varchar" MaxLength="50" />
+    <Property Name="ILCESEHIRID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="KULLANICILAR">
+    <Key>
+      <PropertyRef Name="KULLANICIID" />
+    </Key>
+    <Property Name="KULLANICIID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="KULLANICIAD" Type="varchar" MaxLength="20" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="12" />
+    <Property Name="KULLANICIROL" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="KULLANICIROL">
+    <Key>
+      <PropertyRef Name="KULLANICIROLID" />
+    </Key>
+    <Property Name="KULLANICIROLID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="KULLANICIROL" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="MUDURLUKLER">
+    <Key>
+      <PropertyRef Name="MUDURLUKID" />
+    </Key>
+    <Property Name="MUDURLUKID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MUDURLUKAD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MUSTERILER">
+    <Key>
+      <PropertyRef Name="MUSTERIID" />
+    </Key>
+    <Property Name="MUSTERIID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MUSTERINO" Type="nvarchar" MaxLength="8" />
+    <Property Name="MUSTERIAD" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERISOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERITCKN" Type="nvarchar" MaxLength="11" />
+    <Property Name="MUSTERIDOGUMTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="MUSTERIDOGUMYERI" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERICINSIYET" Type="varchar" MaxLength="20" />
+    <Property Name="MUSTERIMEDENIDURUM" Type="varchar" MaxLength="20" />
+    <Property Name="MUSTERIBABABAAD" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERIANNEAD" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERISEHIRID" Type="uniqueidentifier" />
+    <Property Name="MUSTERIILCEID" Type="uniqueidentifier" />
+    <Property Name="MUSTERISEMT" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERIBORCLUTIPI" Type="varchar" MaxLength="1" />
+    <Property Name="MUSTERIBORCLUTURUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="NOTERLIKLER">
+    <Key>
+      <PropertyRef Name="NOTERID" />
+    </Key>
+    <Property Name="NOTERID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NOTERAD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SEHIRLER">
+    <Key>
+      <PropertyRef Name="SEHIRID" />
+    </Key>
+    <Property Name="SEHIRID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SEHIRAD" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SUBELER">
+    <Key>
+      <PropertyRef Name="SUBEID" />
+    </Key>
+    <Property Name="SUBEID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SUBEAD" Type="varchar" MaxLength="50" />
+    <Property Name="SUBEKOD" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="URUNLER">
+    <Key>
+      <PropertyRef Name="URUNID" />
+    </Key>
+    <Property Name="URUNID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="URUNBORCLUID" Type="uniqueidentifier" />
+    <Property Name="URUNAD" Type="varchar" MaxLength="30" />
+    <Property Name="URUNTAKIPMIKTAR" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="URUNTAKIPTARIHI" Type="datetime2" Precision="7" />
+    <Property Name="URUNTAKIPBIRIMKODU" Type="varchar" MaxLength="4" />
+    <Property Name="URUNTAKIPMUDINO" Type="varchar" MaxLength="8" />
+    <Property Name="URUNAVUKATID" Type="uniqueidentifier" />
+  </EntityType>
+  <Association Name="FK_AVUKATLAR_ILCELER">
+    <End Role="ILCELER" Type="Self.ILCELER" Multiplicity="0..1" />
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ILCELER">
+        <PropertyRef Name="ILCEID" />
+      </Principal>
+      <Dependent Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATILCEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AVUKATLAR_KULLANICILAR">
+    <End Role="KULLANICILAR" Type="Self.KULLANICILAR" Multiplicity="0..1" />
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KULLANICILAR">
+        <PropertyRef Name="KULLANICIID" />
+      </Principal>
+      <Dependent Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATKULLANICIADIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AVUKATLAR_MUSTERILER">
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="0..1" />
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MUSTERILER">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATMUSTERIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AVUKATLAR_SEHIRLER">
+    <End Role="SEHIRLER" Type="Self.SEHIRLER" Multiplicity="0..1" />
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEHIRLER">
+        <PropertyRef Name="SEHIRID" />
+      </Principal>
+      <Dependent Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATSEHIRID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AVUKATLAR_SUBELER">
+    <End Role="SUBELER" Type="Self.SUBELER" Multiplicity="0..1" />
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBELER">
+        <PropertyRef Name="SUBEID" />
+      </Principal>
+      <Dependent Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATAVANSHESAPSUBEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ICRALAR_AVUKATLAR">
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="0..1" />
+    <End Role="ICRALAR" Type="Self.ICRALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATID" />
+      </Principal>
+      <Dependent Role="ICRALAR">
+        <PropertyRef Name="ICRAAVUKAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ICRALAR_IHTARLAR">
+    <End Role="IHTARLAR" Type="Self.IHTARLAR" Multiplicity="0..1" />
+    <End Role="ICRALAR" Type="Self.ICRALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IHTARLAR">
+        <PropertyRef Name="IHTARID" />
+      </Principal>
+      <Dependent Role="ICRALAR">
+        <PropertyRef Name="ICRAIHTARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ICRALAR_MUDURLUKLER">
+    <End Role="MUDURLUKLER" Type="Self.MUDURLUKLER" Multiplicity="0..1" />
+    <End Role="ICRALAR" Type="Self.ICRALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MUDURLUKLER">
+        <PropertyRef Name="MUDURLUKID" />
+      </Principal>
+      <Dependent Role="ICRALAR">
+        <PropertyRef Name="ICRAMUDURLUK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ICRALAR_URUNLER">
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="0..1" />
+    <End Role="ICRALAR" Type="Self.ICRALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNLER">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="ICRALAR">
+        <PropertyRef Name="ICRAURUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IHTARLAR_MUSTERILER">
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="0..1" />
+    <End Role="IHTARLAR" Type="Self.IHTARLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MUSTERILER">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="IHTARLAR">
+        <PropertyRef Name="IHTARBORCLU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IHTARLAR_NOTERLIKLER">
+    <End Role="NOTERLIKLER" Type="Self.NOTERLIKLER" Multiplicity="0..1" />
+    <End Role="IHTARLAR" Type="Self.IHTARLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTERLIKLER">
+        <PropertyRef Name="NOTERID" />
+      </Principal>
+      <Dependent Role="IHTARLAR">
+        <PropertyRef Name="IHTARNOTERADI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ILCELER_SEHIRLER">
+    <End Role="SEHIRLER" Type="Self.SEHIRLER" Multiplicity="0..1" />
+    <End Role="ILCELER" Type="Self.ILCELER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEHIRLER">
+        <PropertyRef Name="SEHIRID" />
+      </Principal>
+      <Dependent Role="ILCELER">
+        <PropertyRef Name="ILCESEHIRID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KULLANICILAR_KULLANICIROL">
+    <End Role="KULLANICIROL" Type="Self.KULLANICIROL" Multiplicity="0..1" />
+    <End Role="KULLANICILAR" Type="Self.KULLANICILAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KULLANICIROL">
+        <PropertyRef Name="KULLANICIROLID" />
+      </Principal>
+      <Dependent Role="KULLANICILAR">
+        <PropertyRef Name="KULLANICIROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MUSTERILER_BORCLUTURLERI">
+    <End Role="BORCLUTURLERI" Type="Self.BORCLUTURLERI" Multiplicity="0..1" />
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BORCLUTURLERI">
+        <PropertyRef Name="BORCLUTURUID" />
+      </Principal>
+      <Dependent Role="MUSTERILER">
+        <PropertyRef Name="MUSTERIBORCLUTURUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MUSTERILER_ILCELER">
+    <End Role="ILCELER" Type="Self.ILCELER" Multiplicity="0..1" />
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ILCELER">
+        <PropertyRef Name="ILCEID" />
+      </Principal>
+      <Dependent Role="MUSTERILER">
+        <PropertyRef Name="MUSTERIILCEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MUSTERILER_SEHIRLER">
+    <End Role="SEHIRLER" Type="Self.SEHIRLER" Multiplicity="0..1" />
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEHIRLER">
+        <PropertyRef Name="SEHIRID" />
+      </Principal>
+      <Dependent Role="MUSTERILER">
+        <PropertyRef Name="MUSTERISEHIRID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_URUNLER_AVUKATLAR">
+    <End Role="AVUKATLAR" Type="Self.AVUKATLAR" Multiplicity="0..1" />
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AVUKATLAR">
+        <PropertyRef Name="AVUKATID" />
+      </Principal>
+      <Dependent Role="URUNLER">
+        <PropertyRef Name="URUNAVUKATID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_URUNLER_MUSTERILER">
+    <End Role="MUSTERILER" Type="Self.MUSTERILER" Multiplicity="0..1" />
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MUSTERILER">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="URUNLER">
+        <PropertyRef Name="URUNBORCLUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MvcDbHukukTakipModelStoreContainer">
+    <EntitySet Name="AVUKATLAR" EntityType="Self.AVUKATLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BORCLUTURLERI" EntityType="Self.BORCLUTURLERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ICRALAR" EntityType="Self.ICRALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ICRALAR_IHTARLAR" EntityType="Self.ICRALAR_IHTARLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IHTARLAR" EntityType="Self.IHTARLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ILCELER" EntityType="Self.ILCELER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KULLANICILAR" EntityType="Self.KULLANICILAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KULLANICIROL" EntityType="Self.KULLANICIROL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUDURLUKLER" EntityType="Self.MUDURLUKLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUSTERILER" EntityType="Self.MUSTERILER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTERLIKLER" EntityType="Self.NOTERLIKLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEHIRLER" EntityType="Self.SEHIRLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBELER" EntityType="Self.SUBELER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="URUNLER" EntityType="Self.URUNLER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AVUKATLAR_ILCELER" Association="Self.FK_AVUKATLAR_ILCELER">
+      <End Role="ILCELER" EntitySet="ILCELER" />
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AVUKATLAR_KULLANICILAR" Association="Self.FK_AVUKATLAR_KULLANICILAR">
+      <End Role="KULLANICILAR" EntitySet="KULLANICILAR" />
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AVUKATLAR_MUSTERILER" Association="Self.FK_AVUKATLAR_MUSTERILER">
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AVUKATLAR_SEHIRLER" Association="Self.FK_AVUKATLAR_SEHIRLER">
+      <End Role="SEHIRLER" EntitySet="SEHIRLER" />
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AVUKATLAR_SUBELER" Association="Self.FK_AVUKATLAR_SUBELER">
+      <End Role="SUBELER" EntitySet="SUBELER" />
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICRALAR_AVUKATLAR" Association="Self.FK_ICRALAR_AVUKATLAR">
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+      <End Role="ICRALAR" EntitySet="ICRALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICRALAR_IHTARLAR" Association="Self.FK_ICRALAR_IHTARLAR">
+      <End Role="IHTARLAR" EntitySet="IHTARLAR" />
+      <End Role="ICRALAR" EntitySet="ICRALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICRALAR_MUDURLUKLER" Association="Self.FK_ICRALAR_MUDURLUKLER">
+      <End Role="MUDURLUKLER" EntitySet="MUDURLUKLER" />
+      <End Role="ICRALAR" EntitySet="ICRALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICRALAR_URUNLER" Association="Self.FK_ICRALAR_URUNLER">
+      <End Role="URUNLER" EntitySet="URUNLER" />
+      <End Role="ICRALAR" EntitySet="ICRALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IHTARLAR_MUSTERILER" Association="Self.FK_IHTARLAR_MUSTERILER">
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+      <End Role="IHTARLAR" EntitySet="IHTARLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IHTARLAR_NOTERLIKLER" Association="Self.FK_IHTARLAR_NOTERLIKLER">
+      <End Role="NOTERLIKLER" EntitySet="NOTERLIKLER" />
+      <End Role="IHTARLAR" EntitySet="IHTARLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ILCELER_SEHIRLER" Association="Self.FK_ILCELER_SEHIRLER">
+      <End Role="SEHIRLER" EntitySet="SEHIRLER" />
+      <End Role="ILCELER" EntitySet="ILCELER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KULLANICILAR_KULLANICIROL" Association="Self.FK_KULLANICILAR_KULLANICIROL">
+      <End Role="KULLANICIROL" EntitySet="KULLANICIROL" />
+      <End Role="KULLANICILAR" EntitySet="KULLANICILAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MUSTERILER_BORCLUTURLERI" Association="Self.FK_MUSTERILER_BORCLUTURLERI">
+      <End Role="BORCLUTURLERI" EntitySet="BORCLUTURLERI" />
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MUSTERILER_ILCELER" Association="Self.FK_MUSTERILER_ILCELER">
+      <End Role="ILCELER" EntitySet="ILCELER" />
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MUSTERILER_SEHIRLER" Association="Self.FK_MUSTERILER_SEHIRLER">
+      <End Role="SEHIRLER" EntitySet="SEHIRLER" />
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_URUNLER_AVUKATLAR" Association="Self.FK_URUNLER_AVUKATLAR">
+      <End Role="AVUKATLAR" EntitySet="AVUKATLAR" />
+      <End Role="URUNLER" EntitySet="URUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_URUNLER_MUSTERILER" Association="Self.FK_URUNLER_MUSTERILER">
+      <End Role="MUSTERILER" EntitySet="MUSTERILER" />
+      <End Role="URUNLER" EntitySet="URUNLER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

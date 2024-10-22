@@ -1,0 +1,73 @@
+﻿@model HukukTakipYeniProje.Models.Entity.MUSTERILER
+
+@{
+    ViewBag.Title = "YeniIhtar";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-group" method="post">
+            @*<div>
+                <label>İhtar ID</label>
+                <input type="text" class="form-control" name="IHTARID" />
+            </div>*@
+            <div>
+                <label>İhtar Borçlu</label>
+                @Html.DropDownListFor(m => m.MUSTERIAD, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+            </div>
+            <div>
+                <label>Noter Adı</label>
+                <input type="text" class="form-control" name="IHTARNOTERADI" />
+            </div>
+            <div>
+                <label>Yevmiye No</label>
+                <input type="text" class="form-control" name="IHTARYEVMIYENO" />
+            </div>
+            <div>
+                <label>İhtar Tarihi</label>
+                <input type="text" class="form-control" name="IHTARTARIHI" />
+            </div>
+            <div>
+                <label>İhtar Süre</label>
+                <input type="text" class="form-control" name="IHTARSURE" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <form class="form-group" method="post">
+            <div>
+                <label>Tebliğ Tarihi</label>
+                <input type="text" class="form-control" name="IHTARTEBLIGTARIHI" />
+            </div>
+            <div>
+                <label>Tebliğ Giriş Tarihi</label>
+                <input type="text" class="form-control" name="IHTARTEBLIGGIRISTARIHI" />
+            </div>
+            <div>
+                <label>İhtarname Nakit Tutar</label>
+                <input type="text" class="form-control" name="IHTARNAMENAKITTUTAR" />
+            </div>
+            <div>
+                <label>İhtarname Gayri Nakit Tutar</label>
+                <input type="text" class="form-control" name="IHTARNAMEGAYRINAKITTUTAR" />
+            </div>
+            <div>
+                <label>İhtar No</label>
+                <input type="text" class="form-control" name="IHTARNO" />
+            </div>
+            <div class="text-right" style="margin-top:40px">
+                <button class="btn btn-info btn-custom-size">İhtar Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>

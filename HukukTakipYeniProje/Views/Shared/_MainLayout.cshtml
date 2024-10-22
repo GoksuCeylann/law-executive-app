@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MvcHukukTakip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Add custom CSS for the layout */
+        .header {
+            background-color: #337ab7; /* Blue background color */
+            height: 60px; /* Adjust this value to change the height of the blue line */
+        }
+
+        .sidebar {
+            background-color: #ffffff; /* Sidebar background color */
+            color: #333; /* Text color for the sidebar */
+            height: 100%;
+            position: fixed;
+            top: 120px; /* Offset by the height of the header */
+            left: 0;
+            width: 250px;
+            padding-top: 20px;
+        }
+
+            .sidebar h3 {
+                font-size: 24px; /* Increase font size for the header */
+                text-align: center; /* Center-align the header text */
+            }
+
+            .sidebar .nav-pills li {
+                text-align: center; /* Center-align text in the buttons */
+                margin-bottom: 10px; /* Add space between each button */
+            }
+
+                .sidebar .nav-pills li a {
+                    background-color: #337ab7; /* Blue background color for buttons */
+                    color: #fff; /* White text color for buttons */
+                    font-size: 18px; /* Increase font size for the buttons */
+                    padding: 10px 15px; /* Adjust padding for the buttons */
+                    display: block;
+                    transition: background-color 0.3s; /* Smooth transition effect */
+                    margin-left:8px;
+                }
+
+                .sidebar .nav-pills li a:hover {
+                    background-color: #286090; /* Slightly lighter blue when hovered */
+                }
+
+        .content {
+            margin-left: 260px; /* Adjust this value to create a margin */
+            padding: 15px;
+            border-left: 2px solid #4CAF50; /* Thinner green vertical line on the left */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Blue Header Line -->
+    <div class="header"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>MvcHukukTakip</h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="/Icra/Index/">İcralar</a></li>
+            <li><a href="/Musteri/Index/">Müşteriler</a></li>
+            <li><a href="/Avukat/Index/">Avukatlar</a></li>
+            <li><a href="/Urun/Index">Ürünler</a></li>
+            <li><a href="/Ihtar/Index">İhtarlar</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

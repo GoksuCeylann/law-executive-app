@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="29e832a8beac449cb24ea2019b8b569c" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.AVUKATLAR" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.BORCLUTURLERI" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.ICRALAR" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.ICRALAR_IHTARLAR" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.IHTARLAR" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.ILCELER" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.KULLANICILAR" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.KULLANICIROL" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.MUDURLUKLER" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.MUSTERILER" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.NOTERLIKLER" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.SEHIRLER" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.SUBELER" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcDbHukukTakipModel.URUNLER" Width="1.5" PointX="13.5" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_AVUKATLAR_ILCELER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_AVUKATLAR_KULLANICILAR" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_AVUKATLAR_MUSTERILER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_AVUKATLAR_SEHIRLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_AVUKATLAR_SUBELER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_ICRALAR_AVUKATLAR" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_URUNLER_AVUKATLAR" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_MUSTERILER_BORCLUTURLERI" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_ICRALAR_IHTARLAR" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_ICRALAR_MUDURLUKLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_ICRALAR_URUNLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_IHTARLAR_MUSTERILER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_IHTARLAR_NOTERLIKLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_ILCELER_SEHIRLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_MUSTERILER_ILCELER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_KULLANICILAR_KULLANICIROL" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_MUSTERILER_SEHIRLER" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcDbHukukTakipModel.FK_URUNLER_MUSTERILER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

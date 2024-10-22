@@ -1,0 +1,120 @@
+﻿@model HukukTakipYeniProje.ViewModels.CustomerViewModel
+
+
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+<form class="form-group" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            @*<div>
+            <label>Müşteri ID</label>
+            <input type="text" class="form-control" name="MUSTERIID" />
+        </div>*@
+            <div>
+                <label>Müşteri No</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERINO, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERINO, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Adı</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERIAD, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERIAD, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Soyadı</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERISOYAD, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERISOYAD, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>TCKN</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERITCKN, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERITCKN, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Doğum Tarihi</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERIDOGUMTARIHI, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERIDOGUMTARIHI, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Doğum Yeri</label>
+                @Html.TextBoxFor(m => m.Musteri.MUSTERIDOGUMYERI, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Musteri.MUSTERIDOGUMYERI, "", new { @style = "color:red" })
+            </div>
+            <div>
+                <label>Cinsiyet</label>
+                <form method="get">
+                    <fieldset name="MUSTERICINSIYET">
+                        <select id="MUSTERICINSIYET" name="MUSTERICINSIYET" class="form-control">
+                            <option selected="selected" value="Erkek">Erkek</option>
+                            <option value="Kadın">Kadın</option>
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <label>Borçlu Türü</label>
+                @Html.DropDownListFor(m => m.Musteri.MUSTERIBORCLUTURUID, Model.BorcluTurleri, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(m => m.Musteri.MUSTERIBORCLUTURUID, "", new { @style = "color:red" })*@
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <label>Medeni Durum</label>
+                <form method="get">
+                    <fieldset name="MUSTERIMEDENIDURUM">
+                        <select id="MovieType" name="MovieType" class="form-control">
+                            <option selected="selected" value="Bekar">Bekar</option>
+                            <option value="Evli">Evli</option>
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <label>Baba Adı</label>
+                <input type="text" class="form-control" name="MUSTERIBABABAAD" />
+            </div>
+            <div>
+                <label>Anne Adı</label>
+                <input type="text" class="form-control" name="MUSTERIANNEAD" />
+            </div>
+            <div>
+                <label>Şehir</label>
+                <input type="text" class="form-control" name="MUSTERISEHIRID" />
+            </div>
+            <div>
+                <label>İlçe</label>
+                <input type="text" class="form-control" name="MUSTERIILCEID" />
+            </div>
+            <div>
+                <label>Semt</label>
+                <input type="text" class="form-control" name="MUSTERISEMT" />
+            </div>
+            <div>
+                <label>Borçlu Tipi</label>
+                <form method="get">
+                    <fieldset name="MUSTERIBORCLUTIPI">
+                        <select id="MUSTERIBORCLUTIPI" name="MUSTERIBORCLUTIPI" class="form-control">
+                            <option selected="selected" value="NULL"></option>
+                            <option value="B">B</option>
+                            <option value="K">K</option>
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="text-right" style="margin-top:15px">
+        <button class="btn btn-info btn-custom-size">Müşteri Ekle</button>
+    </div>
+</form>

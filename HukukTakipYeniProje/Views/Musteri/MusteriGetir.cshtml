@@ -1,0 +1,123 @@
+﻿@model HukukTakipYeniProje.ViewModels.MusteriGetirViewModel
+
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.MUSTERIID)
+                @Html.TextBoxFor(m => m.MUSTERIID, new { @class = "form-control", @*@readonly = "readonly"*@ })
+                <br />
+                @Html.LabelFor(m => m.MUSTERINO)
+                @Html.TextBoxFor(m => m.MUSTERINO, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIAD)
+                @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERISOYAD)
+                @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+                <br />
+                <label>Müşteri Sehir</label>
+                @Html.DropDownListFor(model => model.SelectedSehırId, Model.Sehirler, "Sehir Seçiniz", new { @class = "form-control", id = "SelectedSehirId" })
+                <br />
+                <label>Müşteri Ilce</label>
+                @Html.DropDownListFor(model => model.SelectedIlceId, Model.Ilceler, "Ilce Seçiniz", new { @class = "form-control", id = "SelectedIlceId" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIBABABAAD)
+                @Html.TextBoxFor(m => m.MUSTERIBABABAAD, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIANNEAD)
+                @Html.TextBoxFor(m => m.MUSTERIANNEAD, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Borclu Turu</label>
+                @Html.DropDownListFor(model => model.SelectedBorcluTuruId, Model.BorcluTurleri, "Borclu Turu Seçiniz", new { @class = "form-control", id = "SelectedBorcluTuruId" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERITCKN)
+                @Html.TextBoxFor(m => m.MUSTERITCKN, new { @class = "form-control", @*@readonly = "readonly"*@ })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIDOGUMTARIHI)
+                @Html.TextBoxFor(m => m.MUSTERIDOGUMTARIHI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIDOGUMYERI)
+                @Html.TextBoxFor(m => m.MUSTERIDOGUMYERI, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERICINSIYET)
+                @Html.TextBoxFor(m => m.MUSTERICINSIYET, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIMEDENIDURUM)
+                @Html.TextBoxFor(m => m.MUSTERIMEDENIDURUM, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERISEMT)
+                @Html.TextBoxFor(m => m.MUSTERISEMT, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.MUSTERIBORCLUTIPI)
+                @Html.TextBoxFor(m => m.MUSTERIBORCLUTIPI, new { @class = "form-control" })
+                @*<br />
+        @Html.LabelFor(m => m.ICRAIHTARID)
+        @Html.DropDownListFor(model => model.SelectedIhtarId, Model.Ihtarlar, "Ihtar Seçiniz", new { @class = "form-control", id = "SelectedIhtarId" })*@
+            </div>
+        </div>
+    </div>
+    <div class="text-right" style="margin-top: 15px;">
+        <button class="btn btn-success btn-custom-size">Müşteri Güncelle</button>
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+        // Get a reference to the dropdown element
+        var dropdown = $("#SelectedSehirId");
+
+        // Attach a click event handler to the dropdown
+        dropdown.click(function () {
+            // Get the selected value
+            var selectedValue = $(this).val();
+
+            var dropdown2 = $("#SelectedIlceId");
+
+            // Attach a click event handler to the dropdown
+            dropdown2.click(function () {
+                // Get the selected value
+                var selectedValue = $(this).val();
+
+                var dropdown3 = $("#SelectedBorcluTuruId");
+
+                // Attach a click event handler to the dropdown
+                dropdown3.click(function () {
+                    // Get the selected value
+                    var selectedValue = $(this).val();
+
+                    //var dropdown4 = $("#SelectedIhtarId");
+
+                    //// Attach a click event handler to the dropdown
+                    //dropdown4.click(function () {
+                    //    // Get the selected value
+                    //    var selectedValue = $(this).val();
+
+
+
+                    //// Do something with the selected value
+                    //alert("a");
+
+                    // You can also send the selected value to the server using AJAX if needed
+
+                });
+            });
+</script>

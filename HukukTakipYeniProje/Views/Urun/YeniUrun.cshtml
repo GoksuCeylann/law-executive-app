@@ -1,0 +1,80 @@
+﻿@model HukukTakipYeniProje.Models.Entity.AVUKATLAR
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    /* Custom button size class */
+    .btn-custom-size {
+        padding: 8px 16px; /* Adjust the padding to change button size */
+        font-size: 14px; /* Adjust the font size to change button size */
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-group" method="post">
+            <!-- Left Side Components -->
+            @*<div>
+            <label>Ürün ID</label>
+            <input type="text" class="form-control" name="URUNID" />
+        </div>*@
+            <div>
+                <label>Ürün Borçlu</label>
+                <input type="text" class="form-control" name="URUNBORCLUID" />
+            </div>
+            <div>
+                <label>Ürün Adı</label>
+                <input type="text" class="form-control" name="URUNAD" />
+            </div>
+            <div>
+                <label>Takip Miktarı</label>
+                <input type="text" class="form-control" name="URUNTAKIPMIKTAR" />
+            </div>
+            <div>
+                <label>Ürün Avukat</label>
+                @Html.DropDownListFor(m => m.AVUKATID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form class="form-group" method="post">
+            <!-- Right Side Components -->
+            <div>
+                <label>Takip Tarihi</label>
+                <input type="text" class="form-control" name="URUNTAKIPTARIHI" />
+            </div>
+            <div>
+                <label>Takip Birim Kodu</label>
+                <input type="text" class="form-control" name="URUNTAKIPBIRIMKODU" />
+            </div>
+            <div>
+                <label>Mudi No</label>
+                <form method="get">
+                    <fieldset name="URUNTAKIPMUDINO">
+                        <select id="URUNTAKIPMUDINO" name="URUNTAKIPMUDINO" class="form-control">
+                            <option selected="selected" value="ZD001667">ZD001667</option>
+                            <option value="ZD001669">ZD001669</option>
+                            <option value="ZD000065">ZD000065</option>
+                            <option value="ZD001665">ZD001665</option>
+                            <option value="ZD000067">ZD000067</option>
+                            <option value="ZD001671">ZD001671</option>
+                            <option value="ZD000069">ZD000069</option>
+                            <option value="ZD001673">ZD001673</option>
+                            <option value="ZD001661">ZD001661</option>
+                            <option value="ZD000061">ZD000061</option>
+                            <option value="ZD000063">ZD000063</option>
+                            <option value="ZD001663">ZD001663</option>
+                            <!-- Retained your dropdown options -->
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="text-right" style="margin-top:15px">
+                <button class="btn btn-info btn-custom-size">Ürün Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model HukukTakipYeniProje.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.KULLANICIADI)
+        @Html.TextBoxFor(model => model.KULLANICIADI, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SIFRE)
+        @Html.PasswordFor(model => model.SIFRE, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
+
+
